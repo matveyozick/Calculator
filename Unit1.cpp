@@ -91,3 +91,14 @@ if (c) {
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::Button14Click(TObject *Sender)
+{
+if (c) {
+		x = StrToFloat(Edit1->Text);
+		operation = ((TButton*)Sender)->Caption;
+		Edit1->Text+=(((TButton*)Sender)->Caption);
+		c = 0;
+	}
+}
+//---------------------------------------------------------------------------
+
