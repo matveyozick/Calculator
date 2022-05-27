@@ -1,0 +1,36 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+float x, y = 0;
+String operation;
+int c = 0;
+
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+if (c == 0) {
+		Edit1->Text = ((TButton*)Sender)->Caption;
+		c = 1;
+	}
+	else
+		Edit1->Text += ((TButton*)Sender)->Caption;
+	y = StrToFloat(Edit1->Text);
+    if (y == StrToFloat("0")){
+		ShowMessage("Div by zero.");
+		Edit1->Text="Error";
+		}
+
+}
+//---------------------------------------------------------------------------
